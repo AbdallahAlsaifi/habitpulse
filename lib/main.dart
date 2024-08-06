@@ -5,30 +5,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:habo/habits/habits_manager.dart';
-import 'package:habo/navigation/app_router.dart';
-import 'package:habo/navigation/app_state_manager.dart';
-import 'package:habo/notifications.dart';
-import 'package:habo/settings/settings_manager.dart';
+import 'package:habitpulse/habits/habits_manager.dart';
+import 'package:habitpulse/navigation/app_router.dart';
+import 'package:habitpulse/navigation/app_state_manager.dart';
+import 'package:habitpulse/notifications.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:window_size/window_size.dart';
-import 'package:habo/generated/l10n.dart';
+import 'package:habitpulse/generated/l10n.dart';
 
 void main() {
-  addLicenses();
   runApp(
-    const Habo(),
+    const HabitPulse(),
   );
 }
 
-class Habo extends StatefulWidget {
-  const Habo({super.key});
+class HabitPulse extends StatefulWidget {
+  const HabitPulse({super.key});
 
   @override
-  State<Habo> createState() => _HaboState();
+  State<HabitPulse> createState() => _HabitPulseState();
 }
 
-class _HaboState extends State<Habo> {
+class _HabitPulseState extends State<HabitPulse> {
   final _appStateManager = AppStateManager();
   final _settingsManager = SettingsManager();
   final _habitManager = HabitsManager();
@@ -78,7 +77,8 @@ class _HaboState extends State<Habo> {
       ],
       child: Consumer<SettingsManager>(builder: (context, counter, _) {
         return MaterialApp(
-          title: 'Habo',
+          debugShowCheckedModeBanner: false,
+          title: 'Habit Pulse',
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -100,9 +100,3 @@ class _HaboState extends State<Habo> {
   }
 }
 
-void addLicenses() {
-  LicenseRegistry.addLicense(() async* {
-    final license = await rootBundle.loadString('assets/google_fonts/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
-  });
-}

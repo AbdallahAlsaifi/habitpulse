@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "HabitPulse": MessageLookupByLibrary.simpleMessage("HabitPulse"),
+        "HabitPulseNeedsPermission": MessageLookupByLibrary.simpleMessage(
+            "HabitPulse potrebuje povolenie na odosielanie oznámení na správne fungovanie."),
         "about": MessageLookupByLibrary.simpleMessage("O aplikácii"),
         "accountabilityPartner":
             MessageLookupByLibrary.simpleMessage("Partner dohľadu"),
@@ -55,7 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "close": MessageLookupByLibrary.simpleMessage("Zavrieť"),
         "congratulationsReward":
             MessageLookupByLibrary.simpleMessage("Gratulujem! Vaša odmena:"),
-        "copyright": MessageLookupByLibrary.simpleMessage("©2023 Habo"),
+        "copyright": MessageLookupByLibrary.simpleMessage("©2023 HabitPulse"),
         "create": MessageLookupByLibrary.simpleMessage("Vytvoriť"),
         "createHabit": MessageLookupByLibrary.simpleMessage("Vytvoriť zvyk"),
         "createYourFirstHabit":
@@ -105,11 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "habitTitleEmptyError": MessageLookupByLibrary.simpleMessage(
             "Názov zvyku nemôže byť prázdny."),
         "habits": MessageLookupByLibrary.simpleMessage("Zvyky:"),
-        "habo": MessageLookupByLibrary.simpleMessage("Habo"),
-        "haboNeedsPermission": MessageLookupByLibrary.simpleMessage(
-            "Habo potrebuje povolenie na odosielanie oznámení na správne fungovanie."),
         "ifYouWantToSupport": MessageLookupByLibrary.simpleMessage(
-            "Ak chcete podporiť Habo, môžete:"),
+            "Ak chcete podporiť HabitPulse, môžete:"),
         "logYourDays":
             MessageLookupByLibrary.simpleMessage("Zaznamenávajte svoje dni"),
         "modify": MessageLookupByLibrary.simpleMessage("Upraviť"),

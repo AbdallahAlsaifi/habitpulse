@@ -1,12 +1,12 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/habits/habits_manager.dart';
-import 'package:habo/model/habit_data.dart';
-import 'package:habo/navigation/routes.dart';
-import 'package:habo/notifications.dart';
-import 'package:habo/widgets/text_container.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/habits/habits_manager.dart';
+import 'package:habitpulse/model/habit_data.dart';
+import 'package:habitpulse/navigation/routes.dart';
+import 'package:habitpulse/notifications.dart';
+import 'package:habitpulse/widgets/text_container.dart';
 import 'package:provider/provider.dart';
 
 class EditHabitScreen extends StatefulWidget {
@@ -190,7 +190,7 @@ class _EditHabitScreenState extends State<EditHabitScreen> {
                 Icons.delete,
                 semanticLabel: S.of(context).delete,
               ),
-              color: HaboColors.red,
+              color: HabitPulseColors.red,
               tooltip: S.of(context).delete,
               onPressed: () {
                 Navigator.of(context).pop();

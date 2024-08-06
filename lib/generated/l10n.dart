@@ -290,20 +290,20 @@ class S {
     );
   }
 
-  /// `Habo`
-  String get habo {
+  /// `HabitPulse`
+  String get HabitPulse {
     return Intl.message(
-      'Habo',
-      name: 'habo',
+      'HabitPulse',
+      name: 'HabitPulse',
       desc: '',
       args: [],
     );
   }
 
-  /// `©2023 Habo`
+  /// `©2023 HabitPulse`
   String get copyright {
     return Intl.message(
-      '©2023 Habo',
+      '©2023 HabitPulse',
       name: 'copyright',
       desc: '',
       args: [],
@@ -350,10 +350,10 @@ class S {
     );
   }
 
-  /// `If you want to support Habo you can:`
+  /// `If you want to support HabitPulse you can:`
   String get ifYouWantToSupport {
     return Intl.message(
-      'If you want to support Habo you can:',
+      'If you want to support HabitPulse you can:',
       name: 'ifYouWantToSupport',
       desc: '',
       args: [],
@@ -770,11 +770,11 @@ class S {
     );
   }
 
-  /// `Habo needs permission to send notifications to work properly.`
-  String get haboNeedsPermission {
+  /// `HabitPulse needs permission to send notifications to work properly.`
+  String get HabitPulseNeedsPermission {
     return Intl.message(
-      'Habo needs permission to send notifications to work properly.',
-      name: 'haboNeedsPermission',
+      'HabitPulse needs permission to send notifications to work properly.',
+      name: 'HabitPulseNeedsPermission',
       desc: '',
       args: [],
     );
@@ -960,10 +960,10 @@ class S {
     );
   }
 
-  /// `Do not forget to check your habits.`
+  /// `Do not forget to check your habits like.`
   String get doNotForgetToCheckYourHabits {
     return Intl.message(
-      'Do not forget to check your habits.',
+      'Do not forget to check your habits like.',
       name: 'doNotForgetToCheckYourHabits',
       desc: '',
       args: [],
@@ -1104,6 +1104,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
       Locale.fromSubtags(languageCode: 'cs'),
       Locale.fromSubtags(languageCode: 'de'),
       Locale.fromSubtags(languageCode: 'es'),

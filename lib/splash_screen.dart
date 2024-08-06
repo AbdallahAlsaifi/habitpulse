@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:habo/navigation/routes.dart';
+import 'package:habitpulse/navigation/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   static MaterialPage page() {
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 72,
             ),
             Text(
-              'Habo',
+              'Habit Pulse',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ],

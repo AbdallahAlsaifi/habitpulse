@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:habo/extensions.dart';
-import 'package:habo/settings/settings_manager.dart';
+import 'package:habitpulse/extensions.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';

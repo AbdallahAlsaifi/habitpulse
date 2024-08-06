@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "HabitPulse": MessageLookupByLibrary.simpleMessage("HabitPulse"),
+        "HabitPulseNeedsPermission": MessageLookupByLibrary.simpleMessage(
+            "HabitPulse needs permission to send notifications to work properly."),
         "about": MessageLookupByLibrary.simpleMessage("About"),
         "accountabilityPartner":
             MessageLookupByLibrary.simpleMessage("Accountability partner"),
@@ -55,7 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "close": MessageLookupByLibrary.simpleMessage("Close"),
         "congratulationsReward": MessageLookupByLibrary.simpleMessage(
             "Congratulations! Your reward:"),
-        "copyright": MessageLookupByLibrary.simpleMessage("©2023 Habo"),
+        "copyright": MessageLookupByLibrary.simpleMessage("©2023 HabitPulse"),
         "create": MessageLookupByLibrary.simpleMessage("Create"),
         "createHabit": MessageLookupByLibrary.simpleMessage("Create Habit"),
         "createYourFirstHabit":
@@ -75,7 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "disclaimer": MessageLookupByLibrary.simpleMessage("Disclaimer"),
         "do50PushUps": MessageLookupByLibrary.simpleMessage("Do 50 push ups"),
         "doNotForgetToCheckYourHabits": MessageLookupByLibrary.simpleMessage(
-            "Do not forget to check your habits."),
+            "Do not forget to check your habits like."),
         "donateToCharity":
             MessageLookupByLibrary.simpleMessage("Donate 10\$ to charity"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
@@ -102,11 +105,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "habitTitleEmptyError": MessageLookupByLibrary.simpleMessage(
             "The habit title can not be empty."),
         "habits": MessageLookupByLibrary.simpleMessage("Habits:"),
-        "habo": MessageLookupByLibrary.simpleMessage("Habo"),
-        "haboNeedsPermission": MessageLookupByLibrary.simpleMessage(
-            "Habo needs permission to send notifications to work properly."),
         "ifYouWantToSupport": MessageLookupByLibrary.simpleMessage(
-            "If you want to support Habo you can:"),
+            "If you want to support HabitPulse you can:"),
         "logYourDays": MessageLookupByLibrary.simpleMessage("Log your days"),
         "modify": MessageLookupByLibrary.simpleMessage("Modify"),
         "month": MessageLookupByLibrary.simpleMessage("Month"),

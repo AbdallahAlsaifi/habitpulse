@@ -3,16 +3,16 @@ import 'dart:collection';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/habits/habit.dart';
-import 'package:habo/helpers.dart';
-import 'package:habo/model/habit_data.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/habits/habit.dart';
+import 'package:habitpulse/helpers.dart';
+import 'package:habitpulse/model/habit_data.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart' as ffi;
 
-class HaboModel {
+class HabitPulseModel {
   static const _dbVersion = 3;
   late Database db;
 
@@ -185,7 +185,7 @@ class HaboModel {
       print(databasesPath);
     }
 
-    final databaseFilePath = join(databasesPath, 'habo_db0.db');
+    final databaseFilePath = join(databasesPath, 'HabitPulse_db0.db');
 
     if (Platform.isLinux) {
       ffi.sqfliteFfiInit();

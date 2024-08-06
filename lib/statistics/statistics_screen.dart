@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/habits/habits_manager.dart';
-import 'package:habo/navigation/routes.dart';
-import 'package:habo/statistics/empty_statistics_image.dart';
-import 'package:habo/statistics/overall_statistics_card.dart';
-import 'package:habo/statistics/statistics.dart';
-import 'package:habo/statistics/statistics_card.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/habits/habits_manager.dart';
+import 'package:habitpulse/navigation/routes.dart';
+import 'package:habitpulse/statistics/empty_statistics_image.dart';
+import 'package:habitpulse/statistics/overall_statistics_card.dart';
+import 'package:habitpulse/statistics/statistics.dart';
+import 'package:habitpulse/statistics/statistics_card.dart';
 import 'package:provider/provider.dart';
 
 class StatisticsScreen extends StatefulWidget {
@@ -71,7 +71,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             } else {
               return const Center(
                 child: CircularProgressIndicator(
-                  color: HaboColors.primary,
+                  color: HabitPulseColors.primary,
                 ),
               );
             }

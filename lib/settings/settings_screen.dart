@@ -1,15 +1,15 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/extensions.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/habits/habits_manager.dart';
-import 'package:habo/navigation/app_state_manager.dart';
-import 'package:habo/navigation/routes.dart';
-import 'package:habo/notifications.dart';
-import 'package:habo/settings/color_icon.dart';
-import 'package:habo/settings/settings_manager.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/extensions.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/habits/habits_manager.dart';
+import 'package:habitpulse/navigation/app_state_manager.dart';
+import 'package:habitpulse/navigation/routes.dart';
+import 'package:habitpulse/notifications.dart';
+import 'package:habitpulse/settings/color_icon.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -82,7 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       btnOkText: S.of(context).restore,
       btnCancelText: S.of(context).cancel,
       btnCancelColor: Colors.grey,
-      btnOkColor: HaboColors.primary,
+      btnOkColor: HabitPulseColors.primary,
       btnCancelOnPress: () {},
       btnOkOnPress: () async {
         await Provider.of<HabitsManager>(context, listen: false)
@@ -113,7 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           overlayWidgetBuilder: (_) {
             return const Center(
               child: CircularProgressIndicator(
-                color: HaboColors.primary,
+                color: HabitPulseColors.primary,
               ),
             );
           },
@@ -250,7 +250,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     listen: false)
                                 .checkColor,
                             icon: Icons.check,
-                            defaultColor: HaboColors.primary,
+                            defaultColor: HabitPulseColors.primary,
                             onPicked: (value) {
                               Provider.of<SettingsManager>(context,
                                       listen: false)
@@ -262,7 +262,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     listen: false)
                                 .failColor,
                             icon: Icons.close,
-                            defaultColor: HaboColors.red,
+                            defaultColor: HabitPulseColors.red,
                             onPicked: (value) {
                               Provider.of<SettingsManager>(context,
                                       listen: false)
@@ -274,7 +274,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     listen: false)
                                 .skipColor,
                             icon: Icons.last_page,
-                            defaultColor: HaboColors.skip,
+                            defaultColor: HabitPulseColors.skip,
                             onPicked: (value) {
                               Provider.of<SettingsManager>(context,
                                       listen: false)
@@ -348,9 +348,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             width: 55,
                             height: 55,
                           ),
-                          applicationName: 'Habo',
+                          applicationName: 'Habit Pulse',
                           applicationVersion: _packageInfo.version,
-                          applicationLegalese: '©2023 Habo',
+                          applicationLegalese: '©2023 Habit Pulse',
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(top: 15),
@@ -358,82 +358,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 text: TextSpan(
                                   style: Theme.of(context).textTheme.bodyMedium,
                                   children: [
-                                    TextSpan(
-                                      style: const TextStyle(
-                                          color: Colors.blue,
-                                          decoration: TextDecoration.underline),
-                                      text: S.of(context).termsAndConditions,
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final Uri url = Uri.parse(
-                                              'https://habo.space/terms.html#terms');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(
-                                              url,
-                                              mode: LaunchMode
-                                                  .externalApplication,
-                                            );
-                                          }
-                                        },
-                                    ),
-                                    const TextSpan(text: '\n'),
-                                    TextSpan(
-                                      style: const TextStyle(
-                                          color: Colors.blue,
-                                          decoration: TextDecoration.underline),
-                                      text: S.of(context).privacyPolicy,
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final Uri url = Uri.parse(
-                                              'https://habo.space/terms.html#privacy');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(
-                                              url,
-                                              mode: LaunchMode
-                                                  .externalApplication,
-                                            );
-                                          }
-                                        },
-                                    ),
-                                    const TextSpan(text: '\n'),
-                                    TextSpan(
-                                      style: const TextStyle(
-                                          color: Colors.blue,
-                                          decoration: TextDecoration.underline),
-                                      text: S.of(context).disclaimer,
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final Uri url = Uri.parse(
-                                              'https://habo.space/terms.html#disclaimer');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(
-                                              url,
-                                              mode: LaunchMode
-                                                  .externalApplication,
-                                            );
-                                          }
-                                        },
-                                    ),
-                                    const TextSpan(text: '\n'),
-                                    TextSpan(
-                                      style: const TextStyle(
-                                          color: Colors.blue,
-                                          decoration: TextDecoration.underline),
-                                      text: S.of(context).sourceCode,
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () async {
-                                          final Uri url = Uri.parse(
-                                              'https://github.com/xpavle00/Habo');
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(
-                                              url,
-                                              mode: LaunchMode
-                                                  .externalApplication,
-                                            );
-                                          }
-                                        },
-                                    ),
-                                    const TextSpan(text: '\n\n'),
+
+
                                     TextSpan(
                                       text: S.of(context).ifYouWantToSupport,
                                     ),
@@ -446,7 +372,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
                                           final Uri url = Uri.parse(
-                                              'https://www.buymeacoffee.com/peterpavlenko');
+                                              'https://www.buymeacoffee.com/abdallahalsaifi');
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(
                                               url,

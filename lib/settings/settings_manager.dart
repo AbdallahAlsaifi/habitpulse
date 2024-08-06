@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/model/settings_data.dart';
-import 'package:habo/notifications.dart';
-import 'package:habo/themes.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/model/settings_data.dart';
+import 'package:habitpulse/notifications.dart';
+import 'package:habitpulse/themes.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -56,12 +56,12 @@ class SettingsManager extends ChangeNotifier {
 
   void saveData() async {
     final SharedPreferences prefs = await _prefs;
-    prefs.setString('habo_settings', jsonEncode(_settingsData));
+    prefs.setString('HabitPulse_settings', jsonEncode(_settingsData));
   }
 
   Future<void> loadData() async {
     final SharedPreferences prefs = await _prefs;
-    String? json = prefs.getString('habo_settings');
+    String? json = prefs.getString('HabitPulse_settings');
     if (json != null) {
       _settingsData = SettingsData.fromJson(jsonDecode(json));
     }
@@ -70,30 +70,30 @@ class SettingsManager extends ChangeNotifier {
   ThemeData get getDark {
     switch (_settingsData.theme) {
       case Themes.device:
-        return HaboTheme.darkTheme;
+        return HabitPulseTheme.darkTheme;
       case Themes.light:
-        return HaboTheme.lightTheme;
+        return HabitPulseTheme.lightTheme;
       case Themes.dark:
-        return HaboTheme.darkTheme;
+        return HabitPulseTheme.darkTheme;
       case Themes.oled:
-        return HaboTheme.oledTheme;
+        return HabitPulseTheme.oledTheme;
       default:
-        return HaboTheme.darkTheme;
+        return HabitPulseTheme.darkTheme;
     }
   }
 
   ThemeData get getLight {
     switch (_settingsData.theme) {
       case Themes.device:
-        return HaboTheme.lightTheme;
+        return HabitPulseTheme.lightTheme;
       case Themes.light:
-        return HaboTheme.lightTheme;
+        return HabitPulseTheme.lightTheme;
       case Themes.dark:
-        return HaboTheme.darkTheme;
+        return HabitPulseTheme.darkTheme;
       case Themes.oled:
-        return HaboTheme.oledTheme;
+        return HabitPulseTheme.oledTheme;
       default:
-        return HaboTheme.lightTheme;
+        return HabitPulseTheme.lightTheme;
     }
   }
 

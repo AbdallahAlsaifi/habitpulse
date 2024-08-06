@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:habo/navigation/app_state_manager.dart';
-import 'package:habo/navigation/routes.dart';
-import 'package:habo/onboarding/onboarding.dart';
+import 'package:habitpulse/navigation/app_state_manager.dart';
+import 'package:habitpulse/navigation/routes.dart';
+import 'package:habitpulse/onboarding/onboarding.dart';
 import 'package:provider/provider.dart';
 
 class OnboardingScreen extends StatefulWidget {

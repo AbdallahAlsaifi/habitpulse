@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/settings/settings_manager.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -78,7 +78,7 @@ class Onboarding extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.check,
-                      color: HaboColors.primary,
+                      color: HabitPulseColors.primary,
                     ),
                     const SizedBox(
                       width: 10,
@@ -95,7 +95,7 @@ class Onboarding extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.close,
-                      color: HaboColors.red,
+                      color: HabitPulseColors.red,
                     ),
                     const SizedBox(
                       width: 10,
@@ -112,7 +112,7 @@ class Onboarding extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.last_page,
-                      color: HaboColors.skip,
+                      color: HabitPulseColors.skip,
                     ),
                     const SizedBox(
                       width: 10,
@@ -129,7 +129,7 @@ class Onboarding extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.chat_bubble_outline,
-                      color: HaboColors.orange,
+                      color: HabitPulseColors.orange,
                     ),
                     const SizedBox(
                       width: 10,
@@ -180,7 +180,7 @@ class Onboarding extends StatelessWidget {
       },
       next: const Icon(Icons.arrow_forward),
       showSkipButton: true,
-      dotsDecorator: const DotsDecorator(activeColor: HaboColors.primary),
+      dotsDecorator: const DotsDecorator(activeColor: HabitPulseColors.primary),
       skip: Text(S.of(context).skip),
     );
   }

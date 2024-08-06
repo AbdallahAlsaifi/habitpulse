@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/settings/settings_manager.dart';
-import 'package:habo/statistics/monthly_graph.dart';
-import 'package:habo/statistics/statistics.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
+import 'package:habitpulse/statistics/monthly_graph.dart';
+import 'package:habitpulse/statistics/statistics.dart';
 import 'package:provider/provider.dart';
 
 class StatisticsCard extends StatelessWidget {

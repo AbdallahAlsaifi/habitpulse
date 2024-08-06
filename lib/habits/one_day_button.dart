@@ -1,12 +1,12 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/habits/habit.dart';
-import 'package:habo/habits/habits_manager.dart';
-import 'package:habo/habits/in_button.dart';
-import 'package:habo/helpers.dart';
-import 'package:habo/settings/settings_manager.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/habits/habit.dart';
+import 'package:habitpulse/habits/habits_manager.dart';
+import 'package:habitpulse/habits/in_button.dart';
+import 'package:habitpulse/helpers.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -78,7 +78,7 @@ class OneDayButton extends StatelessWidget {
         icon: Icon(
           Icons.chat_bubble_outline,
           semanticLabel: S.of(context).note,
-          color: HaboColors.orange,
+          color: HabitPulseColors.orange,
         ),
       )
     ];
@@ -214,7 +214,7 @@ class OneDayButton extends StatelessWidget {
       btnOkText: S.of(context).save,
       btnCancelText: S.of(context).close,
       btnCancelColor: Colors.grey,
-      btnOkColor: HaboColors.primary,
+      btnOkColor: HabitPulseColors.primary,
       btnCancelOnPress: () {},
       btnOkOnPress: () {
         Provider.of<HabitsManager>(context, listen: false).addEvent(

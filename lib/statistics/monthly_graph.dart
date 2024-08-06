@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/settings/settings_manager.dart';
-import 'package:habo/statistics/statistics.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
+import 'package:habitpulse/statistics/statistics.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 

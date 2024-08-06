@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/helpers.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/helpers.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class SettingsData {
@@ -11,9 +11,9 @@ class SettingsData {
   bool soundEffects = true;
   bool showMonthName = true;
   bool seenOnboarding = false;
-  Color checkColor = HaboColors.primary;
-  Color failColor = HaboColors.red;
-  Color skipColor = HaboColors.skip;
+  Color checkColor = HabitPulseColors.primary;
+  Color failColor = HabitPulseColors.red;
+  Color skipColor = HabitPulseColors.skip;
 
   SettingsData();
 
@@ -33,13 +33,13 @@ class SettingsData {
             (json['seenOnboarding'] != null) ? json['seenOnboarding'] : false,
         checkColor = (json['checkColor'] != null)
             ? Color(json['checkColor'])
-            : HaboColors.primary,
+            : HabitPulseColors.primary,
         failColor = (json['failColor'] != null)
             ? Color(json['failColor'])
-            : HaboColors.red,
+            : HabitPulseColors.red,
         skipColor = (json['skipColor'] != null)
             ? Color(json['skipColor'])
-            : HaboColors.skip;
+            : HabitPulseColors.skip;
 
   Map<String, dynamic> toJson() => {
         'theme': theme.index,

@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "HabitPulse": MessageLookupByLibrary.simpleMessage("HabitPulse"),
+        "HabitPulseNeedsPermission": MessageLookupByLibrary.simpleMessage(
+            "HabitPulse\'nun düzgün çalışması için bildirim gönderme iznine ihtiyacı vardır."),
         "about": MessageLookupByLibrary.simpleMessage("Hakkında"),
         "accountabilityPartner":
             MessageLookupByLibrary.simpleMessage("Sorumluluk ortağı"),
@@ -56,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "close": MessageLookupByLibrary.simpleMessage("Kapat"),
         "congratulationsReward":
             MessageLookupByLibrary.simpleMessage("Tebrikler! Ödülünüz:"),
-        "copyright": MessageLookupByLibrary.simpleMessage("©2023 Habo"),
+        "copyright": MessageLookupByLibrary.simpleMessage("©2023 HabitPulse"),
         "create": MessageLookupByLibrary.simpleMessage("Oluştur"),
         "createHabit":
             MessageLookupByLibrary.simpleMessage("Alışkanlık Oluştur"),
@@ -107,11 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "habitTitleEmptyError": MessageLookupByLibrary.simpleMessage(
             "Alışkanlık başlığı boş olamaz."),
         "habits": MessageLookupByLibrary.simpleMessage("Alışkanlıklar:"),
-        "habo": MessageLookupByLibrary.simpleMessage("Habo"),
-        "haboNeedsPermission": MessageLookupByLibrary.simpleMessage(
-            "Habo\'nun düzgün çalışması için bildirim gönderme iznine ihtiyacı vardır."),
         "ifYouWantToSupport": MessageLookupByLibrary.simpleMessage(
-            "Habo\'yu desteklemek istiyorsanız:"),
+            "Habit Pulse\'yu desteklemek istiyorsanız:"),
         "logYourDays":
             MessageLookupByLibrary.simpleMessage("Günlerinizi kaydedin"),
         "modify": MessageLookupByLibrary.simpleMessage("Değiştir"),

@@ -1,14 +1,14 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/notifications.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/notifications.dart';
 import 'package:provider/provider.dart';
-import 'package:habo/habits/calendar_column.dart';
-import 'package:habo/habits/habits_manager.dart';
-import 'package:habo/settings/settings_manager.dart';
-import 'package:habo/navigation/navigation.dart';
+import 'package:habitpulse/habits/calendar_column.dart';
+import 'package:habitpulse/habits/habits_manager.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
+import 'package:habitpulse/navigation/navigation.dart';
 
 class HabitsScreen extends StatefulWidget {
   static MaterialPage page() {
@@ -49,7 +49,7 @@ class _HabitsScreenState extends State<HabitsScreen> {
         return Scaffold(
           appBar: AppBar(
             title: const Text(
-              'Habo',
+              'HabitPulse',
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
             backgroundColor: Colors.transparent,
@@ -120,11 +120,11 @@ class _HabitsScreenState extends State<HabitsScreen> {
       headerAnimationLoop: false,
       animType: AnimType.bottomSlide,
       title: S.of(context).notifications,
-      desc: S.of(context).haboNeedsPermission,
+      desc: S.of(context).HabitPulseNeedsPermission,
       btnOkText: S.of(context).allow,
       btnCancelText: S.of(context).cancel,
       btnCancelColor: Colors.grey,
-      btnOkColor: HaboColors.primary,
+      btnOkColor: HabitPulseColors.primary,
       btnCancelOnPress: () {},
       btnOkOnPress: () {
         AwesomeNotifications()

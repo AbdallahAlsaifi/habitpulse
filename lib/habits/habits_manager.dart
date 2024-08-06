@@ -5,17 +5,19 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/habits/habit.dart';
-import 'package:habo/model/backup.dart';
-import 'package:habo/model/habit_data.dart';
-import 'package:habo/model/habo_model.dart';
-import 'package:habo/notifications.dart';
-import 'package:habo/statistics/statistics.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/habits/habit.dart';
+import 'package:habitpulse/model/backup.dart';
+import 'package:habitpulse/model/habit_data.dart';
+
+import 'package:habitpulse/notifications.dart';
+import 'package:habitpulse/statistics/statistics.dart';
+
+import '../model/habo_model.dart';
 
 class HabitsManager extends ChangeNotifier {
-  final HaboModel _haboModel = HaboModel();
+  final HabitPulseModel _HabitPulseModel = HabitPulseModel();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey =
       GlobalKey<ScaffoldMessengerState>();
 
@@ -36,8 +38,8 @@ class HabitsManager extends ChangeNotifier {
   }
 
   initModel() async {
-    await _haboModel.initDatabase();
-    allHabits = await _haboModel.getAllHabits();
+    await _HabitPulseModel.initDatabase();
+    allHabits = await _HabitPulseModel.getAllHabits();
     _isInitialized = true;
     notifyListeners();
   }
@@ -103,7 +105,7 @@ class HabitsManager extends ChangeNotifier {
       jsonDecode(json).forEach((element) {
         habits.add(Habit.fromJson(element));
       });
-      await _haboModel.useBackup(habits);
+      await _HabitPulseModel.useBackup(habits);
       removeNotifications(allHabits);
       allHabits = habits;
       resetNotifications(allHabits);
@@ -118,7 +120,7 @@ class HabitsManager extends ChangeNotifier {
     for (var element in habits) {
       if (element.habitData.notification) {
         var data = element.habitData;
-        setHabitNotification(data.id!, data.notTime, 'Habo', data.title);
+        setHabitNotification(data.id!, data.notTime, 'HabitPulse', data.title);
       }
     }
   }
@@ -136,7 +138,7 @@ class HabitsManager extends ChangeNotifier {
         duration: const Duration(seconds: 3),
         content: Text(message),
         behavior: SnackBarBehavior.floating,
-        backgroundColor: HaboColors.red,
+        backgroundColor: HabitPulseColors.red,
       ),
     );
   }
@@ -156,16 +158,16 @@ class HabitsManager extends ChangeNotifier {
     Habit moved = allHabits.removeAt(oldIndex);
     allHabits.insert(newIndex, moved);
     updateOrder();
-    _haboModel.updateOrder(allHabits);
+    _HabitPulseModel.updateOrder(allHabits);
     notifyListeners();
   }
 
   addEvent(int id, DateTime dateTime, List event) {
-    _haboModel.insertEvent(id, dateTime, event);
+    _HabitPulseModel.insertEvent(id, dateTime, event);
   }
 
   deleteEvent(int id, DateTime dateTime) {
-    _haboModel.deleteEvent(id, dateTime);
+    _HabitPulseModel.deleteEvent(id, dateTime);
   }
 
   addHabit(
@@ -199,12 +201,12 @@ class HabitsManager extends ChangeNotifier {
         accountant: accountant,
       ),
     );
-    _haboModel.insertHabit(newHabit).then(
+    _HabitPulseModel.insertHabit(newHabit).then(
       (id) {
         newHabit.setId = id;
         allHabits.add(newHabit);
         if (notification) {
-          setHabitNotification(id, notTime, 'Habo', title);
+          setHabitNotification(id, notTime, 'HabitPulse', title);
         } else {
           disableHabitNotification(id);
         }
@@ -229,10 +231,10 @@ class HabitsManager extends ChangeNotifier {
     hab.habitData.sanction = habitData.sanction;
     hab.habitData.showSanction = habitData.showSanction;
     hab.habitData.accountant = habitData.accountant;
-    _haboModel.editHabit(hab);
+    _HabitPulseModel.editHabit(hab);
     if (habitData.notification) {
       setHabitNotification(
-          habitData.id!, habitData.notTime, 'Habo', habitData.title);
+          habitData.id!, habitData.notTime, 'HabitPulse', habitData.title);
     } else {
       disableHabitNotification(habitData.id!);
     }
@@ -294,7 +296,7 @@ class HabitsManager extends ChangeNotifier {
   Future<void> deleteFromDB() async {
     if (toDelete.isNotEmpty) {
       disableHabitNotification(toDelete.first.habitData.id!);
-      _haboModel.deleteHabit(toDelete.first.habitData.id!);
+      _HabitPulseModel.deleteHabit(toDelete.first.habitData.id!);
       toDelete.removeFirst();
     }
     if (toDelete.isNotEmpty) {

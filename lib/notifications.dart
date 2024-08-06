@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
 
 bool platformSupportsNotifications() => Platform.isAndroid || Platform.isIOS;
 
@@ -12,18 +12,18 @@ void initializeNotifications() {
     'resource://raw/res_app_icon',
     [
       NotificationChannel(
-          channelKey: 'app_notifications_habo',
+          channelKey: 'app_notifications_HabitPulse',
           channelName: 'App notifications',
           channelDescription:
               'Notification channel for application notifications',
-          defaultColor: HaboColors.primary,
+          defaultColor: HabitPulseColors.primary,
           importance: NotificationImportance.Max,
           criticalAlerts: true),
       NotificationChannel(
-          channelKey: 'habit_notifications_habo',
+          channelKey: 'habit_notifications_HabitPulse',
           channelName: 'Habit notifications',
           channelDescription: 'Notification channel for habit notifications',
-          defaultColor: HaboColors.primary,
+          defaultColor: HabitPulseColors.primary,
           importance: NotificationImportance.Max,
           criticalAlerts: true)
     ],
@@ -42,14 +42,14 @@ void resetAppNotificationIfMissing(TimeOfDay timeOfDay) async {
 }
 
 void setAppNotification(TimeOfDay timeOfDay) async {
-  _setupDailyNotification(0, timeOfDay, 'Habo',
-      S.current.doNotForgetToCheckYourHabits, 'app_notifications_habo');
+  _setupDailyNotification(0, timeOfDay, 'HabitPulse',
+      S.current.doNotForgetToCheckYourHabits, 'app_notifications_HabitPulse');
 }
 
 void setHabitNotification(
     int id, TimeOfDay timeOfDay, String title, String desc) {
   _setupDailyNotification(
-      id, timeOfDay, title, desc, 'habit_notifications_habo');
+      id, timeOfDay, title, desc, 'habit_notifications_HabitPulse');
 }
 
 void disableHabitNotification(int id) {

@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "HabitPulse": MessageLookupByLibrary.simpleMessage("HabitPulse"),
+        "HabitPulseNeedsPermission": MessageLookupByLibrary.simpleMessage(
+            "HabitPulse potřebuje povolení k odesílání oznámení, aby správně fungoval."),
         "about": MessageLookupByLibrary.simpleMessage("O aplikaci"),
         "accountabilityPartner":
             MessageLookupByLibrary.simpleMessage("Smluvni partner"),
@@ -55,7 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "close": MessageLookupByLibrary.simpleMessage("Zavřít"),
         "congratulationsReward":
             MessageLookupByLibrary.simpleMessage("Gratulujeme! Vaše odměna:"),
-        "copyright": MessageLookupByLibrary.simpleMessage("©2023 Habo"),
+        "copyright": MessageLookupByLibrary.simpleMessage("©2023 HabitPulse"),
         "create": MessageLookupByLibrary.simpleMessage("Vytvořit"),
         "createHabit": MessageLookupByLibrary.simpleMessage("Vytvořit návyk"),
         "createYourFirstHabit":
@@ -103,11 +106,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "habitTitleEmptyError": MessageLookupByLibrary.simpleMessage(
             "Název návyku nesmí být prázdný."),
         "habits": MessageLookupByLibrary.simpleMessage("Návyky:"),
-        "habo": MessageLookupByLibrary.simpleMessage("Habo"),
-        "haboNeedsPermission": MessageLookupByLibrary.simpleMessage(
-            "Habo potřebuje povolení k odesílání oznámení, aby správně fungoval."),
         "ifYouWantToSupport": MessageLookupByLibrary.simpleMessage(
-            "Pokud chcete podpořit Habo, můžete:"),
+            "Pokud chcete podpořit HabitPulse, můžete:"),
         "logYourDays":
             MessageLookupByLibrary.simpleMessage("Zaznamenávejte své dny"),
         "modify": MessageLookupByLibrary.simpleMessage("Upravit"),

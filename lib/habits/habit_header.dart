@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/habits/habit.dart';
-import 'package:habo/habits/habits_manager.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/habits/habit.dart';
+import 'package:habitpulse/habits/habits_manager.dart';
 import 'package:provider/provider.dart';
 
 class HabitHeader extends StatelessWidget {
@@ -60,11 +60,11 @@ class HabitHeader extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border.all(
                     color: (_orangeStreak)
-                        ? HaboColors.orange
-                        : HaboColors.primary,
+                        ? HabitPulseColors.orange
+                        : HabitPulseColors.primary,
                   ),
                   color:
-                      (_orangeStreak) ? HaboColors.orange : HaboColors.primary,
+                      (_orangeStreak) ? HabitPulseColors.orange : HabitPulseColors.primary,
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(

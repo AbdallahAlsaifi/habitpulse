@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:habo/constants.dart';
+import 'package:habitpulse/constants.dart';
 
-class HaboTheme {
+class HabitPulseTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
@@ -18,9 +18,9 @@ class HaboTheme {
       colorScheme: ColorScheme.light(
         primaryContainer: Colors.white,
         secondaryContainer: Colors.grey[100],
-        tertiaryContainer: HaboColors.primary,
-        onPrimaryContainer: HaboColors.primary,
-        primary: HaboColors.primary,
+        tertiaryContainer: HabitPulseColors.primary,
+        onPrimaryContainer: HabitPulseColors.primary,
+        primary: HabitPulseColors.primary,
         outline: const Color(0xFF505050),
       ),
       fontFamily: GoogleFonts.nunito().fontFamily,
@@ -64,9 +64,9 @@ class HaboTheme {
       colorScheme: const ColorScheme.dark(
         primaryContainer: Color(0xFF505050),
         secondaryContainer: Color(0xFF353535),
-        onPrimary: HaboColors.primary,
-        tertiaryContainer: HaboColors.primary,
-        primary: HaboColors.primary,
+        onPrimary: HabitPulseColors.primary,
+        tertiaryContainer: HabitPulseColors.primary,
+        primary: HabitPulseColors.primary,
         outline: Colors.grey,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -109,9 +109,9 @@ class HaboTheme {
       colorScheme: const ColorScheme.dark(
         primaryContainer: Color(0xFF282828),
         secondaryContainer: Color(0xFF191919),
-        tertiaryContainer: HaboColors.primary,
-        onPrimary: HaboColors.primary,
-        primary: HaboColors.primary,
+        tertiaryContainer: HabitPulseColors.primary,
+        onPrimary: HabitPulseColors.primary,
+        primary: HabitPulseColors.primary,
         outline: Colors.grey,
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -151,7 +151,7 @@ Color getSwitchTrackColor(Set<MaterialState> states) {
   }
 
   if (states.contains(MaterialState.selected)) {
-    return HaboColors.primary;
+    return HabitPulseColors.primary;
   }
 
   return const Color(0xFF353535);

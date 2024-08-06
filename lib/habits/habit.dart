@@ -1,19 +1,19 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:habo/constants.dart';
-import 'package:habo/generated/l10n.dart';
-import 'package:habo/habits/habit_header.dart';
-import 'package:habo/habits/one_day.dart';
-import 'package:habo/habits/one_day_button.dart';
-import 'package:habo/helpers.dart';
-import 'package:habo/model/habit_data.dart';
-import 'package:habo/navigation/app_state_manager.dart';
-import 'package:habo/settings/settings_manager.dart';
+import 'package:habitpulse/constants.dart';
+import 'package:habitpulse/generated/l10n.dart';
+import 'package:habitpulse/habits/habit_header.dart';
+import 'package:habitpulse/habits/one_day.dart';
+import 'package:habitpulse/habits/one_day_button.dart';
+import 'package:habitpulse/helpers.dart';
+import 'package:habitpulse/model/habit_data.dart';
+import 'package:habitpulse/navigation/app_state_manager.dart';
+import 'package:habitpulse/settings/settings_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:habo/extensions.dart';
+import 'package:habitpulse/extensions.dart';
 
 class Habit extends StatefulWidget {
   const Habit({super.key, required this.habitData});
@@ -367,7 +367,7 @@ class HabitState extends State<Habit> {
                       width: 8,
                       height: 8,
                       decoration: const BoxDecoration(
-                        color: HaboColors.orange,
+                        color: HabitPulseColors.orange,
                         shape: BoxShape.circle,
                       ),
                     ),
